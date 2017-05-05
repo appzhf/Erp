@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Erp</string>
+    <!--底部导航文字-->
+    <string name="nav_bottom_text_home">首页</string>
+    <string name="nav_bottom_text_sns">服务</string>
+    <string name="nav_bottom_text_user">个人</string>
+    <!--首页文字-->
+    <string name="home_title">ERP系统</string>
+    <!--服务文字-->
+    <!--个人文字-->
+</resources>

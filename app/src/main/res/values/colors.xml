@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="argb_ffeeedf3">#ffeeedf3</color>
+    <color name="argbffa7a7aa_line">#ffa7a7aa</color>
+    <!--导航文字颜色-->
+    <color name="orange">#ff6900</color>
+    <color name="radio_text_normal">#ff888888</color>
+    <!--home-->
+    <color name="home_view">#c2c2c2</color>
+    <color name="home_gv_item_text">#000</color>
+    <!--server-->
+    <!--user-->
+</resources>

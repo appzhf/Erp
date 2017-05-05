@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title">50sp</dimen>
+    <dimen name="title_size">20sp</dimen>
+
+    <dimen name="bitmap_roll">8dp</dimen><!--轮播图滚动图片的大小-->
+    <dimen name="image_margin">2dp</dimen><!--图片的左右间距-->
+    <!--home-->
+    <dimen name="home_view">6dp</dimen>
+    <dimen name="home_gv_item_HW">50dp</dimen>
+    <dimen name="home_loop_H">150dp</dimen>
+    <dimen name="home_gv_H">150dp</dimen>
+    <!--server-->
+    <!--user-->
+</resources>
