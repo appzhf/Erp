@@ -5,8 +5,11 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.example.zhf.erp.R;
 import com.example.zhf.erp.loop.LoopPagerAdapterWrapper;
@@ -36,11 +40,12 @@ public class HomeFragment extends Fragment {
     private LoopPagerAdapterWrapper myAdapter;
     private int images[] = {R.drawable.homeimage1, R.drawable.homeimage2, R.drawable.homeimage3, R.drawable.homeimage4};
     private List<ImageView> imageViews = new ArrayList<ImageView>(4);
-    private String str[]={"查阅进度","产品信息","库存信息","任务日志","公司信息","留言功能",};
-    private int office[]={R.mipmap.office_order,R.mipmap.office_check,R.mipmap.office_buy,
-                        R.mipmap.office_product,R.mipmap.office_querty,R.mipmap.office_instore};
+    private String str[] = {"查阅进度", "产品信息", "库存信息", "任务日志", "公司信息", "留言功能",};
+    private int office[] = {R.mipmap.office_order, R.mipmap.office_check, R.mipmap.office_buy,
+            R.mipmap.office_product, R.mipmap.office_querty, R.mipmap.office_instore};
     private HomeListView listView;
 
+    List<Object> list = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,13 +66,13 @@ public class HomeFragment extends Fragment {
 
         getImagePlay();
         loopViewPager.setIndex(0);
-        home_gv.setAdapter(new SimpleAdapter(getActivity(),getData(),R.layout.home_gv_item,new String[]{"text","img"},new int[]{R.id.gv_text,R.id.gv_img}));
+        home_gv.setAdapter(new SimpleAdapter(getActivity(), getData(), R.layout.home_gv_item, new String[]{"text", "img"}, new int[]{R.id.gv_text, R.id.gv_img}));
         home_gv.setSelector(new ColorDrawable(Color.TRANSPARENT));
-        List<Object> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            list.add(i+"");
+            list.add(i + "");
         }
-        listView.setAdapter(new ArrayAdapter<Object>(getActivity(),android.R.layout.simple_list_item_1,list));
+        listView.setAdapter(new ArrayAdapter<Object>(getActivity(), android.R.layout.simple_list_item_1, list));
+
     }
 
     public void getImagePlay() {
@@ -97,12 +102,13 @@ public class HomeFragment extends Fragment {
             pageImage4.setImageDrawable(getResources().getDrawable(position % 4 == 3 ? R.mipmap.yuan1 : R.mipmap.yuan));
         }
     };
-    private List<Map<String,Object>> getData(){
-        List<Map<String,Object>> list = new ArrayList<>();
+
+    private List<Map<String, Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<>();
         for (int i = 0; i < str.length; i++) {
-            Map<String,Object> map = new HashMap<>();
-            map.put("text",str[i]);
-            map.put("img",office[i]);
+            Map<String, Object> map = new HashMap<>();
+            map.put("text", str[i]);
+            map.put("img", office[i]);
             list.add(map);
         }
         return list;

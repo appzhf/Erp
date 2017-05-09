@@ -8,4 +8,5 @@
     <string name="home_title">ERP系统</string>
     <!--服务文字-->
     <!--个人文字-->
+    <string name="user_exit">安全退出</string>
 </resources>

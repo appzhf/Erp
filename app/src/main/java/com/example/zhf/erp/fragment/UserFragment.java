@@ -12,12 +12,13 @@ import com.example.zhf.erp.R;
  * A simple {@link Fragment} subclass.
  */
 public class UserFragment extends Fragment {
-
+    private View v;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        v = inflater.inflate(R.layout.fragment_user, container, false);
+        return v;
     }
 
 }

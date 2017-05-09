@@ -23,6 +23,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private FragmentManager fm;
     private FragmentTransaction ft;
     private Intent intent;
+    private int flag;//标识，代表所要跳转的碎片：
     //退出
     private long exitTime = 0;
 
@@ -38,11 +39,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onStart() {
         int tempFlag = intent.getIntExtra("flag", -1);
         if (tempFlag == -1) {
-            HomeFragment t1 = new HomeFragment();//当没有获得意图里面传的值得时候，默认回到首页
-            ft = fm.beginTransaction().replace(R.id.fl, t1);
-            ft.commit();
+           changeFragment(flag);//当没有获得意图里面传的值得时候，默认回到首页
+        }else{
+            changeFragment(tempFlag);
         }
-
         intent.putExtra("flag", -1);
         super.onStart();
     }
@@ -69,26 +69,44 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fm_home:
-                HomeFragment hf = new HomeFragment();
-                ft = fm.beginTransaction().replace(R.id.fl, hf);
-                ft.commit();
+                flag=0;
+                changeFragment(0);
                 change(0);
                 break;
             case R.id.fm_sns:
-                SnsFragment sf = new SnsFragment();
-                ft = fm.beginTransaction().replace(R.id.fl, sf);
-                ft.commit();
+                flag=1;
+                changeFragment(1);
                 change(1);
                 break;
             case R.id.fm_user:
-                UserFragment uf = new UserFragment();
-                ft = fm.beginTransaction().replace(R.id.fl, uf);
-                ft.commit();
+                flag=2;
+                changeFragment(2);
                 change(2);
                 break;
         }
     }
-
+    /**
+     * 调用此方法可以切换碎片
+     * @param i 0：首页，1：服务，2：个人
+     */
+    public void changeFragment(int i){
+        ft = fm.beginTransaction();
+        switch (i){
+            case 0:
+                HomeFragment hf = new HomeFragment();
+                ft.replace(R.id.fl, hf);
+                break;
+            case 1:
+                SnsFragment sf = new SnsFragment();
+                ft.replace(R.id.fl, sf);
+                break;
+            case 2:
+                UserFragment uf = new UserFragment();
+                ft.replace(R.id.fl, uf);
+                break;
+        }
+        ft.commitAllowingStateLoss();
+    }
     //改变状态
     private void change(int index) {
         switch (index) {

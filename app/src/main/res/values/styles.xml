@@ -23,4 +23,21 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textSize">12sp</item>
     </style>
+    <!--个人导航text属性-->
+    <style name="user_fragment_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/user_margin</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/user_text</item>
+    </style>
+    <!--个人导航img属性-->
+    <style name="user_fragment_img_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/user_margin</item>
+        <item name="android:src">@drawable/ic_arrow</item>
+    </style>
 </resources>

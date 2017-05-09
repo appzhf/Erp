@@ -12,4 +12,8 @@
     <dimen name="home_gv_H">150dp</dimen>
     <!--server-->
     <!--user-->
+    <dimen name="user_H">50dp</dimen>
+    <dimen name="user_title">100dp</dimen>
+    <dimen name="user_margin">10dp</dimen>
+    <dimen name="user_exit">20dp</dimen>
 </resources>

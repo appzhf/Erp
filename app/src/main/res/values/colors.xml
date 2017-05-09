@@ -14,4 +14,9 @@
     <color name="home_gv_item_text">#000</color>
     <!--server-->
     <!--user-->
+    <color name="user_background">#ffefebe7</color>
+    <color name="user_text">#000</color>
+    <drawable name="clr_normal">#fff</drawable>
+    <drawable name="clr_pressed">#999</drawable>
+
 </resources>
