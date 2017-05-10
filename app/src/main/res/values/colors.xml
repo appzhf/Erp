@@ -12,11 +12,13 @@
     <!--home-->
     <color name="home_view">#c2c2c2</color>
     <color name="home_gv_item_text">#000</color>
-    <!--server-->
     <!--user-->
     <color name="user_background">#ffefebe7</color>
     <color name="user_text">#000</color>
     <drawable name="clr_normal">#fff</drawable>
     <drawable name="clr_pressed">#999</drawable>
-
+    <color name="dialog_text_color_1">#ffc8c7cc</color><!--自定义dialog-->
+    <color name="dialog_text_color_2">#ff0f82fe</color><!--自定义dialog-->
+    <!--公司简介-->
+    <color name="intro_color">#03a9f5</color>
 </resources>

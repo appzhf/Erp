@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "Erp.db";
     private static final int VERSION = 1;
-    private static final String path = "/data/data/com.example.hswater/databases/Erp.db";
+    private static final String path = "/data/data/com.example.zhf.erp/databases/Erp.db";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, VERSION);

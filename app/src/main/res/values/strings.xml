@@ -6,7 +6,34 @@
     <string name="nav_bottom_text_user">个人</string>
     <!--首页文字-->
     <string name="home_title">ERP系统</string>
-    <!--服务文字-->
+    <string name="home_user">个人</string>
     <!--个人文字-->
     <string name="user_exit">安全退出</string>
+    <string name="user_title">个人</string>
+    <!--全部模块-->
+    <string name="all_title">全部</string>
+    <string-array name="all">
+        <item>公司信息</item>
+        <item>留言功能</item>
+        <item>帮助</item>
+    </string-array>
+    <string-array name="all2">
+        <item>查阅进度</item>
+        <item>产品信息</item>
+        <item>库存信息</item>
+    </string-array>
+    <string-array name="all3">
+        <item>下单</item>
+        <item>审核</item>
+        <item>采购</item>
+        <item>生产</item>
+        <item>质检</item>
+        <item>入库</item>
+        <item>发货</item>
+    </string-array>
+    <!--公司简介-->
+    <string name="web_set_version">版本号1.0</string>
+    <string name="web_set_http">http://www.hzsb.com</string>
+    <string name="content">公司官网(点击进入)</string>
+    <string name="intro_title">关于我们</string>
 </resources>

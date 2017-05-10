@@ -1,95 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhf.erp.MainActivity"
-    android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/title"
-        android:background="@drawable/layerlist_radiogroup_to">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/home_title"
-            android:textSize="@dimen/title_size"
-            android:textColor="@color/orange"/>
-    </LinearLayout>
-    <FrameLayout
-        android:id="@+id/fl"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </FrameLayout>
+    android:fillViewport="true"
+    android:scrollbars="none">
 
     <LinearLayout
-        android:id="@+id/radiogroup_container"
         android:layout_width="match_parent"
-        android:layout_height="55dip"
-        android:background="@drawable/layerlist_radiogroup_bg"
-        android:gravity="center_vertical"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/fm_home"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_height="@dimen/home_loop_H">
 
-            <TextView
-                android:id="@+id/tv_home"
-                style="@style/main_navi_txt_style"
-                android:text="@string/nav_bottom_text_home"
-                android:textColor="@color/orange"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/tv_img1"
-                style="@style/main_navi_img_style"
-                android:layout_above="@+id/tv_home"
-                android:contentDescription="@null"
-                android:src="@mipmap/nav_bottom_home_active_60"/>
-        </RelativeLayout>
+                <com.example.zhf.erp.loop.LoopViewPager
+                    android:id="@+id/loopViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:loop_duration="1000"
+                    app:loop_ms="5000" />
 
-        <RelativeLayout
-            android:id="@+id/fm_sns"
+                <include layout="@layout/image_input" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_height="@dimen/home_view"
+            android:background="@color/home_view" />
 
-            <TextView
-                android:id="@+id/tv_sns"
-                style="@style/main_navi_txt_style"
-                android:text="@string/nav_bottom_text_sns"
-                android:textColor="@color/radio_text_normal"/>
-
-            <ImageView
-                android:id="@+id/tv_img2"
-                style="@style/main_navi_img_style"
-                android:layout_above="@+id/tv_sns"
-                android:contentDescription="@null"
-                android:src="@mipmap/nav_bottom_sns_60" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fm_user"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_height="@dimen/home_gv_H">
+            <GridView
+                android:id="@+id/home_gv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="2dp"
+                android:numColumns="3"
+                android:verticalSpacing="2dp" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_user"
-                style="@style/main_navi_txt_style"
-                android:text="@string/nav_bottom_text_user"
-                android:textColor="@color/radio_text_normal"/>
-
-            <ImageView
-                android:id="@+id/tv_img3"
-                style="@style/main_navi_img_style"
-                android:layout_above="@+id/tv_user"
-                android:contentDescription="@null"
-                android:src="@mipmap/nav_bottom_user_60" />
-        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_view"
+            android:background="@color/home_view" />
+        <com.example.zhf.erp.view.HomeListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
+
