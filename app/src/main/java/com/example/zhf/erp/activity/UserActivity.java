@@ -83,7 +83,7 @@ public class UserActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.application:
-                // 加载应用市场 hello
+                // 加载应用市场 hahaha
                 try {
                     Uri uri = Uri.parse("market://details?id=" + getPackageName());
                     intent = new Intent(Intent.ACTION_VIEW, uri);
