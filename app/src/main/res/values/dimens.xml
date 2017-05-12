@@ -3,6 +3,8 @@
     <dimen name="title">50sp</dimen>
     <dimen name="title_size">20sp</dimen>
 
+    <dimen name="cpb_stroke_width">4dp</dimen>
+
     <dimen name="bitmap_roll">8dp</dimen><!--轮播图滚动图片的大小-->
     <dimen name="image_margin">2dp</dimen><!--图片的左右间距-->
     <!--home-->

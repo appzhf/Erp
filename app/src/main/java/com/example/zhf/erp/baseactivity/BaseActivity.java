@@ -16,6 +16,7 @@ import android.view.animation.LayoutAnimationController;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ import java.util.Map;
 
 public class BaseActivity extends Activity implements View.OnClickListener {
     private Context context = BaseActivity.this;
+    private RelativeLayout base_title;
     private LinearLayout llContent;//容器
     protected LayoutInflater inflater;//布局填充器
     protected ImageView back;
@@ -47,6 +49,7 @@ public class BaseActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
+        base_title = (RelativeLayout) super.findViewById(R.id.base_title);
         llContent = (LinearLayout) super.findViewById(R.id.base_ll_content);
         back = (ImageView) super.findViewById(R.id.back);
         user = (TextView) super.findViewById(R.id.user);
@@ -74,7 +77,12 @@ public class BaseActivity extends Activity implements View.OnClickListener {
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         llContent.addView(view, params);
     }
-
+    /**
+     * 是否隐藏title
+     * */
+    public void isTitle(boolean b){
+        base_title.setVisibility(b ? View.VISIBLE : View.GONE);
+    }
     /**
      * 返回
      */
@@ -122,12 +130,12 @@ public class BaseActivity extends Activity implements View.OnClickListener {
     /**
      * 简单适配器list
      */
-    public List<Map<String, Object>> getData(List<String> str, int office[]) {
+    public List<Map<String, Object>> getData(List<String> str, List<Integer> office) {
         List<Map<String, Object>> list = new ArrayList<>();
         for (int i = 0; i < str.size(); i++) {
             Map<String, Object> map = new HashMap<>();
             map.put("text", str.get(i));
-            map.put("img", office[i]);
+            map.put("img", office.get(i));
             list.add(map);
         }
         return list;

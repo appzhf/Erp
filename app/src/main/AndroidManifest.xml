@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zhf.erp">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -25,19 +26,35 @@
         <activity
             android:name=".activity.AllActivity"
             screenOrientation="portrait" />
-        <!--公司简介-->
+        <!-- 公司简介 -->
         <activity
             android:name=".activity.IntroductionActivity"
+            screenOrientation="portrait" />
+        <!-- 个人中心 -->
+        <activity
+            android:name=".activity.UserCenterActivity"
+            screenOrientation="portrait" />
+        <!-- help -->
+        <activity
+            android:name=".activity.HelpActivity"
+            screenOrientation="portrait" />
+        <!--个人数据应用-->
+        <activity
+            android:name=".activity.PersonActivity"
             screenOrientation="portrait"/>
-
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            screenOrientation="portrait" />
+        <!-- 登录 -->
+        <activity
+            android:name=".activity.LoginActivity"
+            screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

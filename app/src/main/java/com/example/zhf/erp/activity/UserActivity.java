@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -26,7 +27,7 @@ import com.example.zhf.erp.view.DialogAlertView;
 public class UserActivity extends BaseActivity {
     private Context context = UserActivity.this;
     private RelativeLayout exit;
-    private RelativeLayout application, user_intro, user_phone;
+    private RelativeLayout application, user_intro, user_phone, user_center;
     //android 6.0手动添加权限
     private final int REQUEST_CALL_PHONE = 202;
 
@@ -46,10 +47,13 @@ public class UserActivity extends BaseActivity {
     @Override
     public void initView() {
         super.initView();
+        user_center = (RelativeLayout) findViewById(R.id.user_center);
         user_phone = (RelativeLayout) findViewById(R.id.user_phone);
         application = (RelativeLayout) findViewById(R.id.application);
         user_intro = (RelativeLayout) findViewById(R.id.user_intro);
         exit = (RelativeLayout) findViewById(R.id.exit);
+
+        user_center.setOnClickListener(this);
         user_phone.setOnClickListener(this);
         application.setOnClickListener(this);
         user_intro.setOnClickListener(this);
@@ -61,6 +65,10 @@ public class UserActivity extends BaseActivity {
         super.onClick(v);
         Intent intent = null;
         switch (v.getId()) {
+            case R.id.user_center:
+                intent = new Intent(context, UserCenterActivity.class);
+                startActivity(intent);
+                break;
             case R.id.exit:
                 showDialog();
                 break;
@@ -72,6 +80,7 @@ public class UserActivity extends BaseActivity {
                 } else {
                     intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:400-1081-616"));
                 }
+                startActivity(intent);
                 break;
             case R.id.application:
                 // 加载应用市场 hello
@@ -79,15 +88,16 @@ public class UserActivity extends BaseActivity {
                     Uri uri = Uri.parse("market://details?id=" + getPackageName());
                     intent = new Intent(Intent.ACTION_VIEW, uri);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 } catch (ActivityNotFoundException e) {
                     show("无法加载应用市场，请检查手机是否安装");
                 }
                 break;
             case R.id.user_intro:
                 intent = new Intent(context, IntroductionActivity.class);
+                startActivity(intent);
                 break;
         }
-        startActivity(intent);
     }
 
     /**
@@ -115,6 +125,9 @@ public class UserActivity extends BaseActivity {
         dialog_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor se = getSharedPreferences("login",MODE_PRIVATE).edit();
+                se.clear();
+                se.commit();
                 ExitApplication.getInstance().exit(context);
                 dialog.dismiss();
             }
