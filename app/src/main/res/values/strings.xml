@@ -4,12 +4,18 @@
     <string name="nav_bottom_text_home">首页</string>
     <string name="nav_bottom_text_sns">服务</string>
     <string name="nav_bottom_text_user">个人</string>
+    <!--登录-->
+    <string name="login">登录</string>
+    <string name="login_context">ERP系统</string>
     <!--首页文字-->
     <string name="home_title">ERP系统</string>
     <string name="home_user">个人</string>
+
     <!--个人文字-->
     <string name="user_exit">安全退出</string>
     <string name="user_title">个人</string>
+    <!--help-->
+    <string name="help_title">帮助文档</string>
     <!--全部模块-->
     <string name="all_title">全部</string>
     <string-array name="all">
@@ -31,9 +37,25 @@
         <item>入库</item>
         <item>发货</item>
     </string-array>
+    <!--权限管理-->
+    <!--下单人-->
+    <string name="batchState">批量状态</string>
+    <string name="otherRequire">其它要求</string>
+    <string name="shouldDeliveryTime">应交付时间</string>
+    <string name="orderTime">下单时间</string>
+    <string name="orderUser">下单人</string>
     <!--公司简介-->
     <string name="web_set_version">版本号1.0</string>
     <string name="web_set_http">http://www.hzsb.com</string>
     <string name="content">公司官网(点击进入)</string>
     <string name="intro_title">关于我们</string>
+    <!--个人中心-->
+    <string name="user_center">个人中心</string>
+    <string name="change_new_pwd">新密码:</string>
+    <string name="change_old_pwd">旧密码:</string>
+    <string name="change_ok">确认</string>
+    <string name="change_show_pwd">显示密码</string>
+    <string name="set_pwd_prompt">密码长度不能大于20个字符</string>
+    <string name="set_pwd_prompt1">密码长度不能下于6个字符</string>
+
 </resources>

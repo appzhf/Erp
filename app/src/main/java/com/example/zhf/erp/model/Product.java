@@ -8,7 +8,6 @@ import java.sql.Date;
  * @author liujiancheng 产品信息类
  */
 public class Product implements Serializable{
-
 	private String id;// 下单编号
 	private String name;// 产品名称
 	private String moudel;// 规格型号
@@ -575,5 +574,66 @@ public class Product implements Serializable{
 
 	public void setIsMakeTick(String isMakeTick) {
 		this.isMakeTick = isMakeTick;
+	}
+
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id='" + id + '\'' +
+				", name='" + name + '\'' +
+				", moudel='" + moudel + '\'' +
+				", number=" + number +
+				", hasProductNumber=" + hasProductNumber +
+				", notProductNumber=" + notProductNumber +
+				", inspectionNumber=" + inspectionNumber +
+				", samplingNumber=" + samplingNumber +
+				", allRepairNumber=" + allRepairNumber +
+				", thisProductNumber=" + thisProductNumber +
+				", qualityRepairNumber=" + qualityRepairNumber +
+				", backRepairState='" + backRepairState + '\'' +
+				", hasInStorageNumber=" + hasInStorageNumber +
+				", hasOutStorageNumber=" + hasOutStorageNumber +
+				", hasDeliveryNumber=" + hasDeliveryNumber +
+				", batchState='" + batchState + '\'' +
+				", otherRequire='" + otherRequire + '\'' +
+				", shouldDeliveryTime='" + shouldDeliveryTime + '\'' +
+				", orderTime='" + orderTime + '\'' +
+				", orderUser='" + orderUser + '\'' +
+				", orderBz='" + orderBz + '\'' +
+				", customerUnit='" + customerUnit + '\'' +
+				", deliveryAddress='" + deliveryAddress + '\'' +
+				", userPhone='" + userPhone + '\'' +
+				", invoiceHead='" + invoiceHead + '\'' +
+				", nowState='" + nowState + '\'' +
+				", auditUser='" + auditUser + '\'' +
+				", auditTime='" + auditTime + '\'' +
+				", auditBz='" + auditBz + '\'' +
+				", verifyUser='" + verifyUser + '\'' +
+				", verifyTime='" + verifyTime + '\'' +
+				", verifyBz='" + verifyBz + '\'' +
+				", productUser='" + productUser + '\'' +
+				", startProductTime='" + startProductTime + '\'' +
+				", endProductTime='" + endProductTime + '\'' +
+				", productBz='" + productBz + '\'' +
+				", qualityUser='" + qualityUser + '\'' +
+				", qualitTime='" + qualitTime + '\'' +
+				", qualitBz='" + qualitBz + '\'' +
+				", inStorageUser='" + inStorageUser + '\'' +
+				", inStorageTime='" + inStorageTime + '\'' +
+				", inStorageBz='" + inStorageBz + '\'' +
+				", outStorageUser='" + outStorageUser + '\'' +
+				", outStorageTime='" + outStorageTime + '\'' +
+				", outStorageBz='" + outStorageBz + '\'' +
+				", deliveryUser='" + deliveryUser + '\'' +
+				", deliveryTime='" + deliveryTime + '\'' +
+				", deliveryBz='" + deliveryBz + '\'' +
+				", isNeedProduct='" + isNeedProduct + '\'' +
+				", isBuySIMCard='" + isBuySIMCard + '\'' +
+				", simCardState='" + simCardState + '\'' +
+				", bz='" + bz + '\'' +
+				", isHasChange='" + isHasChange + '\'' +
+				", licenseId='" + licenseId + '\'' +
+				", isMakeTick='" + isMakeTick + '\'' +
+				'}';
 	}
 }

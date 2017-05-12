@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/main_tiem">
+    <TableRow
+        style="@style/main_item_style">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下单编号:"
+            android:paddingRight="10dp"/>
+        <TextView
+            android:id="@+id/main_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- - - - -"/>
+    </TableRow>
+    <TableRow
+        style="@style/main_item_style">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="产品名称:"
+            android:paddingRight="10dp"/>
+        <TextView
+            android:id="@+id/main_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- - - - -"/>
+    </TableRow>
+    <TableRow
+        style="@style/main_item_style">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="操作状态:"
+            android:paddingRight="10dp"/>
+        <TextView
+            android:id="@+id/main_product1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- - - - -"/>
+    </TableRow>
+    <TableRow
+        style="@style/main_item_style">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="操作时间:"/>
+
+        <TextView
+            android:id="@+id/main_product2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- - - - -"/>
+    </TableRow>
+    <TableRow
+        style="@style/main_item_style">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="操作人员:"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:id="@+id/main_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- - - - -"/>
+    </TableRow>
+    <LinearLayout
+        android:id="@+id/main_look"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="@color/main_item">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即查看更多内容"/>
+    </LinearLayout>
+</TableLayout>
